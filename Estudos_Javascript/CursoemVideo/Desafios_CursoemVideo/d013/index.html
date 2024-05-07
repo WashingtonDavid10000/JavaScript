@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do Aluno</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input{
+            height: 50px;
+            width: 150px;
+        }
+
+        #rep{
+            background-color: rgba(255, 99, 71, 0.5);
+            color: red;
+        }
+
+        #rec{
+            background-color: rgba(255, 255, 0, 0.281);
+            color: rgb(160, 160, 46);
+        }
+
+        #apro{
+            background-color: lightgreen;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+    <input type="button" value="Entras com as notas " onclick="notas()">
+    <div id="res">
+        <p>Clique no botão acima para informar as notas do aluno.</p>
+    </div>
+    <script>
+        function notas(){
+            let nome = prompt("Qual o nome do aluno?")
+            let nota1 = Number(prompt(`Primeira nota de ${nome}:`))
+            let nota2 = Number(prompt(`Segunda nota de ${nome}:`))
+            let media = (nota1 + nota2) / 2
+            let situa = ''
+            if(media < 3){
+                situa = 'Com média abaixo de 3.0, o aluno está <strong id="rep">REPROVADO</strong>'
+            }else if(media > 3 && media < 6){
+                situa = 'Com média entre 3.0 e 6.0, o aluno está em <strong id="rec">RECUPERAÇÃO</strong>'
+            }else{
+                situa = 'Com média acima de 6.0, o aluno está <strong id="apro">APROVADO</strong>'
+            }
+            let res = document.querySelector("div#res")
+            res.innerHTML = ''
+            res.innerHTML = `
+            <h1>Analisando a situação de ${nome}</h1>
+            <p>Com as notas ${nota1} e ${nota2}, a <strong>média é ${media}</strong></p>
+            <p>${situa}</p>.
+            `
+        }
+    </script>
+</body>
+</html>

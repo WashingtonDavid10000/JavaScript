@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Desconto</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input{
+            width: 150px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <input type="button" value="Desconto de 10%" onclick="desconto()">
+    <div id="res">
+        <p>Clique no botão acima para iniciar.</p>
+    </div>
+    <script>
+        function desconto(){
+            let produto = prompt("Qual é o produto que você está comprando?")
+            let preco = prompt(`Qual é o preço de ${produto}?`)
+            let p = Number(preco)
+            let des = Number((p*10)/100).toFixed(2)
+            let res = window.document.querySelector('div#res')
+            res.innerHTML = ''
+            res.innerHTML = `
+            <h1>Calculando desconto de 10% para ${produto}</h1>
+            <p>O preço original era R$${preco}.</p>
+            <p>Você acaba de ganhar R$${des} de desconto (-10%).</p>
+            <p>No fim, você vai pagar R$${(p-des).toFixed(2)} no produto ${produto}.</p>
+            `
+        }
+    </script>
+</body>
+</html>

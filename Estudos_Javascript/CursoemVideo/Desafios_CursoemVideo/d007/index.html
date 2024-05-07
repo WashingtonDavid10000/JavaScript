@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coversor U$</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input{
+            width: 150px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ para US$</h1>
+    <input type="button" value="Converter" onclick="dolar()">
+    <div id="res">
+        <p>Clique no botão acima para iniciar.</p>
+    </div>
+    <script>
+        function dolar(){
+            let cot = prompt("Quanto está a cotação do dólar neste momento?")
+            let c = Number(cot)
+            let reais = prompt("Quantos R$ você tem na carteira?")
+            let r = Number(reais)
+            let res = window.document.querySelector("div#res")
+
+            res.innerHTML = ''
+            res.innerHTML = `
+                <h1>Convertendo R$${r} em doláres.</h1>
+                <p>R$${r} é igual a US$${(r/c).toFixed(2)}</p>
+            `
+        }
+
+    </script>
+</body>
+</html>
