@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício_06</title>
+    <style>
+        input{
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Antecessor e Sucessor</h1>
+    <input type="button" value="Aperte" onclick="Verificar()">
+    <div id="res">
+
+    </div>
+
+
+    <script>
+        function Verificar(){
+            let num = Number(prompt('Digite um número: '))
+            let ante = num - 1
+            let suce = num + 1
+
+            window.alert(`O número digitado foi ${num}\nO antecessor de ${num} é ${ante}\nO sucessor de ${num} é ${suce}`)
+
+            let res = window.document.getElementById('res')
+            res.innerHTML = `
+            <p>O número digitado foi ${num}</p>
+            <p>O antecessor de ${num} é ${ante}</p>
+            <p>O sucessor de ${num} é ${suce}</p>`
+
+        }
+    </script>
+</body>
+</html>

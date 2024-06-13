@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício_05</title>
+    <style>
+        input{
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Média</h1>
+    <input type="button" value="Aperte" onclick="media()">
+    <div id="res">
+
+    </div>
+
+    <script>
+        function media(){
+            let nota1 = Number(window.prompt(`Primeira nota: `))
+            let nota2 = Number(window.prompt(`Segunda nota: `))
+            window.alert(`A média entre ${nota1} e ${nota2} é igual a ${(nota1 + nota2)/2}`)
+            let res = window.document.getElementById("res")
+            res.innerHTML = `<p>A média entre ${nota1} e ${nota2} é igual a ${(nota1 + nota2)/2}</p>`
+        }
+    </script>
+</body>
+</html>

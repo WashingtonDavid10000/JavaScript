@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício_15</title>
+    <style>
+        input{
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dias Trabalhados</h1>
+    <input type="button" value="Aperte" onclick="calcular()">
+    <div id="res"></div>
+    <script>
+        function calcular(){
+        let d = Number(prompt('Digite o número de dias trabalhados no mês: '))
+        let res = window.document.querySelector('div#res')
+        let h = 8 * 25
+        res.innerHTML = ''
+        res.innerHTML = `
+        <p>Sabendo que o funcionário trabalha 8 horas por dia e ganha R$25 por hora...</p>
+        <p>No final do mês, o funcionário receberá R$${d*h}.</p>
+        `
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício_03</title>
+    <style>
+        input{
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Funcionário</h1>
+    <input type="button" value="Aperte" onclick="funcio()">
+    <div id="res">
+        
+    </div>
+
+    <script>
+        function funcio(){
+            let nome = window.prompt("Nome do funcionário: ")
+            let sal = window.prompt(`Salário de ${nome}: `)
+            window.alert(`O funcionário ${nome} tem um salário de R$${sal} em Junho.`)
+            let res = window.document.getElementById("res")
+            res.innerHTML = `<p>O funcionário ${nome} tem um salário de R$${sal} em Junho.</p>`
+        }
+    </script>
+</body>
+</html>

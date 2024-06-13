@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício_12</title>
+    <style>
+        input{
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Promoção</h1>
+    <input type="button" value="Aperte" onclick="calcular()">
+    <div id="res"></div>
+    <script>
+        function calcular(){
+            let valor = Number(prompt('Qual o valor do produto?: '))
+            let desconto = valor * 0.05
+            let res = window.document.querySelector('div#res')
+            res.innerHTML = `<h1>O produto custa R$${valor}.</h1>
+            <p>Com 5% de desconto, o preço será R$${valor-desconto}.</p>
+            <p>O desconto foi de ${desconto}.</p>
+            `
+        }
+    </script>
+</body>
+</html>
